@@ -15,9 +15,9 @@ const port = 5000;
 app.use(express.json());
 app.use(cors());
 
-// MongoDB connection
-mongoose.set('strictQuery', false); // Suppress strict query warnings
-mongoose.connect('mongodb://127.0.0.1:27017/student')
+
+
+mongoose.connect('mongodb+srv://subhiksharajaram59:ONZM8nxxIk9sbi2e@cluster0.bcusekr.mongodb.net/student')
     .then(() => console.log('Connected to MongoDB'))
     .catch((error) => {
         console.error('Error connecting to MongoDB:', error);
@@ -98,8 +98,9 @@ app.post('/login', async (req, res) => {
 // Fetch all active events
 app.get('/events/active', async (req, res) => {
     try {
-        // Fetch all events where isActive is true
+        console.log('Fetching active events...');
         const activeEvents = await Event.find({ isActive: true }).sort({ startDate: 1 });
+        console.log('Active Events:', activeEvents);
         res.json(activeEvents);
     } catch (error) {
         console.error('Error fetching active events:', error);

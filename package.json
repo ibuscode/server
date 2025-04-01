@@ -27,6 +27,7 @@
     "puppeteer": "^24.4.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
-    "qrcode": "^1.5.4"
+    "qrcode": "^1.5.4",
+    "vercel": "^41.4.1"
   }
 }
